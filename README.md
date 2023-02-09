@@ -20,3 +20,23 @@ https://github.com/arkypita/LaserGRBL/discussions/952
       00015	00355802	tx	[3F]
       00016	00355807	rx	<Idle|MPos:0.000,0.000,0.000|FS:0,0|Pn:S>\r
       [...]
+      
+      
+      	// Handle Grbl Feedback https://github.com/LaserWeb/deprecated-LaserWeb1/blob/master/server.js
+
+	if (data.indexOf('<') == 0) {
+		// https://github.com/grbl/grbl/wiki/Configuring-Grbl-v0.8#---current-status
+
+		// remove first <
+		var t = data.substr(1);
+
+		// remove last >
+		t = t.substr(0,t.length-2);
+
+		// split on , and :
+		t = t.split(/,|:/);
+
+		emitToPortSockets(port, 'machineStatus', {'status':t[0], 'mpos':[t[2], t[3], t[4]], 'wpos':[t[6], t[7], t[8]]});
+
+		return;
+	}
