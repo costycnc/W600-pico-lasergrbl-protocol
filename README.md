@@ -1,5 +1,7 @@
 # lasergrbl-protocol
 
+web serial terminal https://bipes.net.br/aroca/web-serial-terminal/
+
 https://github.com/arkypita/LaserGRBL/discussions/952
 
       00000	00352092	log	Recording session started @ 13/04/2020 10:54:11
