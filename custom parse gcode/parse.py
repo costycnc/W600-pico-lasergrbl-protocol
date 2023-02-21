@@ -4,7 +4,7 @@ c=""
 d="9"
 for a in gcode: 
     if d in ('0','1','2'):
-        if a in ('-','0','1','2','3','4','5','6','7','8','9',' '):
+        if a in ('-','0','1','2','3','4','5','6','7','8','9',' ','.'):
             c=c+a
         else:  
             e=int(d)
@@ -17,4 +17,4 @@ for a in gcode:
         d="1"   
     if a=="F":
         d="2"
-print(int(b[0])+int(b[1])+int(b[2]))
+print(float(b[0])+float(b[1])+float(b[2]))
