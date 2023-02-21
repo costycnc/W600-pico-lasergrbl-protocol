@@ -11,10 +11,7 @@ for a in gcode:
             b[int(d)]=c
             c="" 
             d="9"            
-    if a=="X":
-        d="0"     
-    if a=="Y":
-        d="1"   
-    if a=="F":
-        d="2"
-print(float(b[0])+float(b[1])+float(b[2]))
+    if a=="X": d="0"     
+    if a=="Y": d="1"   
+    if a=="F": d="2"
+print(b)
