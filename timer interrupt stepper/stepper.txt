@@ -1,0 +1,24 @@
+float counter;//https://forum.arduino.cc/t/controlling-a-stepper-motor-with-timer/241714/4
+int steppin1;
+int dirpin1;
+int halfperiod;
+boolean dir;
+
+void stepmotor() {
+digitalWrite(steppin1, !digitalRead(steppin1);
+digitalWrite(dirpin1, dir);
+}
+void setspeed() {
+  halfperiod = (1/abs(speedspm))/2; 
+  //   speedspm calculated from some sort of PID in steps per sec 
+  //   1/steps per sec = period dividing by 2 gives low time and high time
+dir = (boolean)(speedspm/abs(speedspm));
+}
+ISR(TIMER1_COMPA_vect) // compare every 25 khz set by using divider for 2mhz and ocr1a of 80
+{
+counter++; // set as float so can be replaced by smaller ticks for better accuracy
+if (counter >= halfperiod) {
+  counter = 0  
+  stepmotor(); // set motor high set motor low depending on previous state.
+  }
+}
