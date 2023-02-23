@@ -1,0 +1,9 @@
+variable=["unu","doi","trei"]
+print(variable.pop(0))
+print(variable)
+variable.append("patru")
+print(variable)
+variable.append("cinci")
+print(variable)
+print(variable.pop(0))
+print(variable)
