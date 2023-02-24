@@ -1,16 +1,18 @@
-gcode = 'G1 F1200 X-8.914 Y-9.843 E3.36222'
-b=[[],[],[]]
+b=["0","0","0"]
+request="G01 X100.123 Y200\n"
+d=9
 c=""
-d="9"
-for a in gcode: 
-    if d in ('0','1','2'):
-        if a in ('-','0','1','2','3','4','5','6','7','8','9',' ','.'):
-            c=c+a
-        else:  
-            b[int(d)]=c
+for a in request:            
+    if d in (0,1,2):
+        if str(a) in ('.','-','0','1','2','3','4','5','6','7','8','9',' '):
+            c=c+str(a)
+        else:                                           
+            b[d]=c                           
             c="" 
             d="9"            
-    if a=="X": d="0"     
-    if a=="Y": d="1"   
-    if a=="F": d="2"
-print(b)
+    if str(a)=="X": d=0   
+    if str(a)=="Y": d=1   
+    if str(a)=="G": d=2
+print(b[0])   
+print(b[1])            
+print(b[2])   
