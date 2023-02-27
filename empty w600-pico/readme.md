@@ -15,9 +15,13 @@ and paste in terminal with ctrl+A+V
 <img src="https://raw.githubusercontent.com/costycnc/W600-pico-lasergrbl-protocol-foto/main/foto/connect.jpg">        
 
 
-after send these four lines if not want use filezilla as ftp you can use ftp windows from dos command prompt 
+after send these four lines ...download https://github.com/costycnc/W600-pico-lasergrbl-protocol-foto and unzip
 
-type cmd in addess bar folder 
+open folder W600-pico-lasergrbl-protocol-foto-main\W600-pico-lasergrbl-protocol-foto-main\empty w600-pico
+
+write "cmd" in adress bar folder... it will open dos command prompt
+
+
 
 and type >> ftp 192.168.43.1
 
