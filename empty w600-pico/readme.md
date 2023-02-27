@@ -44,12 +44,21 @@ will see
 insert user "user" and password "user"    
 
 <img src="https://raw.githubusercontent.com/costycnc/W600-pico-lasergrbl-protocol-foto/main/foto/connect2.jpg">
+
+if is correct conected with module when send "dir" will see list of all files and folders of w600 ...
+
+<img src="https://raw.githubusercontent.com/costycnc/W600-pico-lasergrbl-protocol-foto/main/foto/connect3.jpg">
+
+now the module accept all ftp standard commands
         
 install https://filezilla-project.org/download.php?type=client
 
-        and connect at 192.168.43.1 user 12345678
-        and will see all files and folders from w600-pico
-        Keep in mind ... is a local connection ... so need to discconect from router and connect to "W600_softAP" station
+
+Keep in mind ... is a local connection (the wifi module is connected directly with your pc)... so need to discconect from router and connect to "W600_softAP" station when want upload file to w600 module
+
+and disconnect from w600 module and connect with your wifi modem when need to navigated on internet.
+
+
         
 ### Costycnc foam cutter        
         
