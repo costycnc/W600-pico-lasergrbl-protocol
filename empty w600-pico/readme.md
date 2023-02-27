@@ -10,7 +10,7 @@ Paste in terminal with ctrl+A+V
     import w600
     w600.run_ftpserver(port=21,username="user",password="12345678")
     
-[<img src="https://raw.githubusercontent.com/costycnc/W600-pico-lasergrbl-protocol-foto/main/foto/connect.jpg">]        
+<img src="https://raw.githubusercontent.com/costycnc/W600-pico-lasergrbl-protocol-foto/main/foto/connect.jpg">        
 
 
 after send these four lines if not have a ftp you can use dos command prompt >> ftp 192.168.43.1
