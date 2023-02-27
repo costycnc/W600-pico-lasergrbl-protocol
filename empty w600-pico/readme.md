@@ -30,4 +30,4 @@ install https://filezilla-project.org/download.php?type=client
 ### Development Roadmap        
         
 #costycnc macchine 
- [<img src="https://cloud.githubusercontent.com/assets/8782035/23578353/fba95768-00d4-11e7-9357-99c00a30631d.jpg">](https://youtu.be/_HhSQFuQPcA)       
+ [<img src="https://raw.githubusercontent.com/costycnc/W600-pico-lasergrbl-protocol-foto/main/foto/costycnc.jpg">](https://youtu.be/_HhSQFuQPcA)       
