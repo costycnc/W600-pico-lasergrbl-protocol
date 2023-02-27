@@ -26,3 +26,8 @@ install https://filezilla-project.org/download.php?type=client
         and connect at 192.168.43.1 user 12345678
         and will see all files and folders from w600-pico
         Keep in mind ... is a local connection ... so need to discconect from router and connect to "W600_softAP" station
+        
+### Development Roadmap        
+        
+#costycnc macchine 
+ [<img src="https://cloud.githubusercontent.com/assets/8782035/23578353/fba95768-00d4-11e7-9357-99c00a30631d.jpg">](https://www.youtube.com/watch?v=Uk2fGoNL3Yk)       
