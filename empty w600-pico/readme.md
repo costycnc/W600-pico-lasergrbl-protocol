@@ -64,6 +64,18 @@ Keep in mind ... is a local connection (the wifi module is connected directly wi
 and disconnect from w600 module and connect with your wifi modem when need to navigated on internet.
 
 
+If want create automatically an access point (connect directly with w600) when restart w600 ... ulpoad boot.py from ap folder
+
+If want connect automatically w600 with your router when restart w600 ... upload boot.py from router folder
+
+       ...
+       wlan.active(True)                      
+       wlan.connect("name", "psw")#insert name and password of your router
+       for i in range(16):
+       ...
+       
+change "name" and "password" with your home router name and password       
+
         
 ### Costycnc foam cutter        
         
