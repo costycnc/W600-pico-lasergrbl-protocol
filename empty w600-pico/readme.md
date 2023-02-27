@@ -8,7 +8,7 @@ Copy lines from bellow
     import easyw600
     easyw600.createap(ssid="W600_softAP")        
     import w600
-    w600.run_ftpserver(port=21,username="user",password="12345678")
+    w600.run_ftpserver(port=21,username="user",password="user")
     
 and paste in terminal with ctrl+A+V    
     
