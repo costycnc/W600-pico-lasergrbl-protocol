@@ -15,12 +15,22 @@ and paste in terminal with ctrl+A+V
 <img src="https://raw.githubusercontent.com/costycnc/W600-pico-lasergrbl-protocol-foto/main/foto/connect.jpg">        
 
 
-after send these four lines ...download https://github.com/costycnc/W600-pico-lasergrbl-protocol-foto and unzip
+after send these four lines ...
 
-open folder W600-pico-lasergrbl-protocol-foto-main\W600-pico-lasergrbl-protocol-foto-main\empty w600-pico
+download https://github.com/costycnc/W600-pico-lasergrbl-protocol-foto and unzip
 
-write "cmd" in adress bar folder... it will open dos command prompt
+open wifi tab windows and connect with w600 module 
 
+<img src="https://raw.githubusercontent.com/costycnc/W600-pico-lasergrbl-protocol-foto/main/foto/connect.jpg"> 
+
+open folder (that saved first) W600-pico-lasergrbl-protocol-foto-main\W600-pico-lasergrbl-protocol-foto-main\empty w600-pico
+
+write "cmd" in adress bar folder...
+
+<img src="https://raw.githubusercontent.com/costycnc/W600-pico-lasergrbl-protocol-foto/main/foto/connect1.jpg">      
+
+
+it will open dos command prompt
 
 
 and type >> ftp 192.168.43.1
