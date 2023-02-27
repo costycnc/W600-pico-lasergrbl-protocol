@@ -2,6 +2,8 @@ You can use https://bipes.net.br/aroca/web-serial-terminal/ terminal for write(c
 
 you can use https://ttssh2.osdn.jp/ terminal for receive or send data to/from w600-pico
 
+another serial terminal https://www.settorezero.com/wordpress/software/zeroterm/
+
 Copy lines from bellow
         
     import easyw600
