@@ -21,7 +21,7 @@ download https://github.com/costycnc/W600-pico-lasergrbl-protocol-foto and unzip
 
 open wifi tab windows and connect with w600 module 
 
-<img src="https://raw.githubusercontent.com/costycnc/W600-pico-lasergrbl-protocol-foto/main/foto/connect.jpg"> 
+<img src="https://raw.githubusercontent.com/costycnc/W600-pico-lasergrbl-protocol-foto/main/foto/wifi.jpg"> 
 
 open folder (that saved first) W600-pico-lasergrbl-protocol-foto-main\W600-pico-lasergrbl-protocol-foto-main\empty w600-pico
 
