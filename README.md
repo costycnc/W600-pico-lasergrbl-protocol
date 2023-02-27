@@ -1,8 +1,10 @@
 # lasergrbl-protocol
 
-web serial terminal https://bipes.net.br/aroca/web-serial-terminal/
+online web serial terminal https://bipes.net.br/aroca/web-serial-terminal/
 
-ftp  https://filezilla-project.org/
+windows terminal https://ttssh2.osdn.jp/ terminal for receive or send data to/from w600-pico
+
+ftp program  https://filezilla-project.org/
 
 https://github.com/arkypita/LaserGRBL/discussions/952
 
