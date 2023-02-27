@@ -2,7 +2,7 @@
 
 online web serial terminal https://bipes.net.br/aroca/web-serial-terminal/
 
-windows terminal https://ttssh2.osdn.jp/ terminal for receive or send data to/from w600-pico
+windows terminal for receive or send data to/from w600-pico: https://ttssh2.osdn.jp/  or https://www.settorezero.com/wordpress/software/zeroterm/
 
 ftp program  https://filezilla-project.org/
 
