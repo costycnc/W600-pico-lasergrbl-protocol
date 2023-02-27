@@ -51,7 +51,9 @@ if is correct conected with module when send "dir" will see list of all files an
 
 now the module accept all ftp standard commands
         
-install https://filezilla-project.org/download.php?type=client
+if want use mozilla ftp client ...install https://filezilla-project.org/download.php?type=client    
+
+
 
 
 Keep in mind ... is a local connection (the wifi module is connected directly with your pc)... so need to discconect from router and connect to "W600_softAP" station when want upload file to w600 module
