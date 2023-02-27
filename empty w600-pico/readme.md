@@ -1,14 +1,16 @@
 # LaserGRBL [![Donation](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate?business=4WQX8HUBXRVUU&no_recurring=0&item_name=LaserGRBL&currency_code=EUR)
 Official website [http://lasergrbl.com](http://lasergrbl.com)
 
-You can use this terminal for write(comunicate) with w600-pico https://bipes.net.br/aroca/web-serial-terminal/ 
+You can use https://bipes.net.br/aroca/web-serial-terminal/ terminal for write(comunicate) with w600-pico  
 
-Paste in terminal with ctrl+A+V
+Copy lines from bellow
         
     import easyw600
     easyw600.createap(ssid="W600_softAP")        
     import w600
     w600.run_ftpserver(port=21,username="user",password="12345678")
+    
+and paste in terminal with ctrl+A+V    
     
 <img src="https://raw.githubusercontent.com/costycnc/W600-pico-lasergrbl-protocol-foto/main/foto/connect.jpg">        
 
