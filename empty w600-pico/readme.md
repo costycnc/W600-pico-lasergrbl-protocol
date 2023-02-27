@@ -13,13 +13,19 @@ Paste in terminal with ctrl+A+V
 <img src="https://raw.githubusercontent.com/costycnc/W600-pico-lasergrbl-protocol-foto/main/foto/connect.jpg">        
 
 
-after send these four lines if not have a ftp you can use dos command prompt >> ftp 192.168.43.1
+after send these four lines if not want use filezilla as ftp you can use ftp windows from dos command prompt 
+
+type cmd in addess bar folder 
+
+and type >> ftp 192.168.43.1
 
 will see 
         
         Connected to 192.168.43.1.
         220-= welcome on W600 FTP server =-
         220
+
+
         
         or...
         
