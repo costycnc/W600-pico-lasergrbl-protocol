@@ -53,6 +53,9 @@ now the module accept all ftp standard commands
         
 if want use mozilla ftp client ...install https://filezilla-project.org/download.php?type=client    
 
+<img src="https://raw.githubusercontent.com/costycnc/W600-pico-lasergrbl-protocol-foto/main/foto/filezilla.jpg">
+<img src="https://raw.githubusercontent.com/costycnc/W600-pico-lasergrbl-protocol-foto/main/foto/filezilla1.jpg">
+<img src="https://raw.githubusercontent.com/costycnc/W600-pico-lasergrbl-protocol-foto/main/foto/filezilla2.jpg">
 
 
 
