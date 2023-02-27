@@ -40,10 +40,10 @@ will see
         Connected to 192.168.43.1.
         220-= welcome on W600 FTP server =-
         220
-
-
         
-        or...
+insert user "user" and password "user"    
+
+<img src="https://raw.githubusercontent.com/costycnc/W600-pico-lasergrbl-protocol-foto/main/foto/connect2.jpg">
         
 install https://filezilla-project.org/download.php?type=client
 
