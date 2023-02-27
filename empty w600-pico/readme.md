@@ -27,7 +27,6 @@ install https://filezilla-project.org/download.php?type=client
         and will see all files and folders from w600-pico
         Keep in mind ... is a local connection ... so need to discconect from router and connect to "W600_softAP" station
         
-### Development Roadmap        
+### Costycnc foam cutter        
         
-#costycnc macchine 
  [<img src="https://raw.githubusercontent.com/costycnc/W600-pico-lasergrbl-protocol-foto/main/foto/costycnc.jpg">](https://youtu.be/_HhSQFuQPcA)       
