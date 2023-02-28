@@ -18,16 +18,25 @@ d=9
 g=0
 c=""
 request3=[]
+targetx=0
+targetxx=0
+targety=0
+actualx=0
+actualy=0
+ff=0
 
 timer3 = Timer(3)
-timer3.init(period=100, mode=Timer.PERIODIC, callback=lambda t:prt())
+timer3.init(period=1000, mode=Timer.PERIODIC, callback=lambda t:prt())
 
 def prt():
     global flag
-    #flag=1                
-    #print("\n\r")
-    #print(b[0])
-    #conn.send("ok\r")
+    global targetxx
+    print("\n\r")
+    print(targetxx)
+    targetxx -=1
+    if targetxx<0:
+        flag=1
+   
     
 
 while True: 
@@ -46,10 +55,9 @@ while True:
             else:
                 request4=request3.pop(0)
                 request4 +="n"
-                b=["0","0","0"]
                 for a in request4:                                 
                     if d in (0,1,2): 
-                        if str(a) in ('.','-','0','1','2','3','4','5','6','7','8','9',' '):
+                        if str(a) in ('-','0','1','2','3','4','5','6','7','8','9',' '):
                             c=c+str(a)
                         else:                             
                             b[d]=c                           
@@ -58,17 +66,15 @@ while True:
                     if str(a)=="X": d=0                         
                     if str(a)=="Y": d=1 
                     if str(a)=="G": d=2      
-                print("\n\r")   
-                print("      request4x=")
-                print(request4)    
-                print("-")
-                print(b[0])                   
-                print(b[1])            
-                print(b[2])    
-                print("\n\r")
                 if len(request1)<5:
-                    conn.send("ok\r")
-
+                    conn.send("ok\r")                
+                targetx =int(b[0])-ff
+                targetxx=targetx
+                #print("\n\r")
+                #print(abs(targetx))
+                ff=int(b[0])
+                #targety +=int(b[1])
+                flag=2
                                 
                 
                 
@@ -78,13 +84,7 @@ while True:
             if "?" in request:   
                 conn.send("<Idle|MPos:"+b[0]+","+b[1]+",0.000|FS:0,0>\r")
             else:
-                request1.append(request.decode())
-                print("\n\r")
-                print("request=")
-                print(request)   
-                print("\n\r")
-                print("request+=")
-                print(request1)                                              
+                request1.append(request.decode())                                             
     except Exception as e:
         #print('Exception: ', e)
         #print('no data from', addr)
