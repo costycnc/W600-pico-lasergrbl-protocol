@@ -193,47 +193,6 @@ while True:
         led2.value(0) 
         led3.value(0)    
 
-    
 
-        led.value(1) 
-        led1.value(0) 
-        led2.value(0) 
-        led3.value(0) 
-    if a==2:
-        led.value(1) 
-        led1.value(1) 
-        led2.value(0) 
-        led3.value(0) 
-    if a==3:
-        led.value(0) 
-        led1.value(1) 
-        led2.value(0) 
-        led3.value(0) 
-    if a==4:
-        led.value(0) 
-        led1.value(1) 
-        led2.value(1) 
-        led3.value(0)        
-    if a==5:
-        led.value(0) 
-        led1.value(0) 
-        led2.value(1) 
-        led3.value(0)  
-    if a==6:
-        led.value(0) 
-        led1.value(0) 
-        led2.value(1) 
-        led3.value(1)  
-    if a==7:
-        led.value(0) 
-        led1.value(0) 
-        led2.value(0) 
-        led3.value(1)  
-    if a==8:
-        led.value(1) 
-        led1.value(0) 
-        led2.value(0) 
-        led3.value(1)  
-        a=0        
 
     
