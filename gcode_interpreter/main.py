@@ -25,11 +25,16 @@ t=0
 
 
 def gcode_exec(strg):
-    print(strg)
+    global k
+    for i in range(0,len(b),2): 
+        if b[i]=="X":
+            #r=float(b[i+1])
+            k=5000
  
 while True: 
     #led.value(not led.value())
-    if k==1:
+    if k>0:
+        k -=1        
         a +=1
         if a>8:
             a=1    
