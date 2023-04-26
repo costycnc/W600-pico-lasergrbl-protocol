@@ -3,11 +3,14 @@ import time
 from machine import Pin
 
 
-led = Pin(Pin.PB_12, Pin.OUT, Pin.PULL_FLOATING)
-led1 = Pin(Pin.PB_11, Pin.OUT, Pin.PULL_FLOATING)
-led2 = Pin(Pin.PB_10, Pin.OUT, Pin.PULL_FLOATING)
-led3 = Pin(Pin.PB_09, Pin.OUT, Pin.PULL_FLOATING)
-led4 = Pin(Pin.PB_18, Pin.OUT, Pin.PULL_FLOATING)
+led = Pin(Pin.PB_08, Pin.OUT, Pin.PULL_FLOATING)
+led1 = Pin(Pin.PB_07, Pin.OUT, Pin.PULL_FLOATING)
+led2 = Pin(Pin.PB_06, Pin.OUT, Pin.PULL_FLOATING)
+led3 = Pin(Pin.PB_18, Pin.OUT, Pin.PULL_FLOATING)
+led4 = Pin(Pin.PB_12, Pin.OUT, Pin.PULL_FLOATING)
+led5 = Pin(Pin.PB_11, Pin.OUT, Pin.PULL_FLOATING)
+led6 = Pin(Pin.PB_10, Pin.OUT, Pin.PULL_FLOATING)
+led7 = Pin(Pin.PB_09, Pin.OUT, Pin.PULL_FLOATING)
 s = socket.socket()
 s.bind(('', 23))
 s.listen(5)
@@ -26,6 +29,9 @@ u=0
 v=[]
 x=0
 y=0
+wx=0
+wy=0
+directie=""
 
 
 def extract(a4):
@@ -38,15 +44,41 @@ def extract(a4):
     return vrt    
 
 def gcode_exec(strg):
-    global k,u,x,y
+    global k,u,x,y,directie,wx,wy,conn
     if "X" in strg:
         nn=strg.split("X")
         k=int(float(extract(nn[1])))
+        wx=k-x
+        if wx==0:
+            u=0
+            return
+        if wx>0:
+            print("dreapta")
+            directie="dreapta"
+        else:
+            print("stanga")
+            directie="stanga"    
         x=k
-        k=k*100
+        k=abs(wx)*100
+        print("k=")
+        print(k)
     if "Y" in strg:
         nn=strg.split("Y")
-        y=int(float(extract(nn[1])))        
+        k=int(float(extract(nn[1]))) 
+        wx=k-x
+        if wx==0:
+            u=0
+            return
+        if wx>0:
+            print("sus")
+            directie="sus"
+        else:
+            print("jos")
+            directie="jos"    
+        x=k
+        k=abs(wx)*100
+        print("k=")
+        print(k)       
     else:
         u=0    
         
@@ -62,53 +94,200 @@ while True:
         else:
             u=0
     if k>0:
-        time.sleep_us(200)
-        k -=1
-        if k==0:
-            u=0        
-        a +=1
-        if a>8:
-            a=1    
-        if a==1:
-            led.value(1) 
-            led1.value(0) 
-            led2.value(0) 
-            led3.value(0) 
-        if a==2:
-            led.value(1) 
-            led1.value(1) 
-            led2.value(0) 
-            led3.value(0) 
-        if a==3:
-            led.value(0) 
-            led1.value(1) 
-            led2.value(0) 
-            led3.value(0) 
-        if a==4:
-            led.value(0) 
-            led1.value(1) 
-            led2.value(1) 
-            led3.value(0)        
-        if a==5:
-            led.value(0) 
-            led1.value(0) 
-            led2.value(1) 
-            led3.value(0)  
-        if a==6:
-            led.value(0) 
-            led1.value(0) 
-            led2.value(1) 
-            led3.value(1)  
-        if a==7:
-            led.value(0) 
-            led1.value(0) 
-            led2.value(0) 
-            led3.value(1)  
-        if a==8:
-            led.value(1) 
-            led1.value(0) 
-            led2.value(0) 
-            led3.value(1)    
+        if directie=="dreapta":
+            time.sleep_us(200)
+            k -=1
+            if k==0:
+                u=0        
+            a +=1
+            if a>8:
+                a=1    
+            if a==1:
+                led.value(1) 
+                led1.value(0) 
+                led2.value(0) 
+                led3.value(0) 
+            if a==2:
+                led.value(1) 
+                led1.value(1) 
+                led2.value(0) 
+                led3.value(0) 
+            if a==3:
+                led.value(0) 
+                led1.value(1) 
+                led2.value(0) 
+                led3.value(0) 
+            if a==4:
+                led.value(0) 
+                led1.value(1) 
+                led2.value(1) 
+                led3.value(0)        
+            if a==5:
+                led.value(0) 
+                led1.value(0) 
+                led2.value(1) 
+                led3.value(0)  
+            if a==6:
+                led.value(0) 
+                led1.value(0) 
+                led2.value(1) 
+                led3.value(1)  
+            if a==7:
+                led.value(0) 
+                led1.value(0) 
+                led2.value(0) 
+                led3.value(1)  
+            if a==8:
+                led.value(1) 
+                led1.value(0) 
+                led2.value(0) 
+                led3.value(1) 
+                
+        if directie=="stanga":
+            time.sleep_us(200)
+            k -=1
+            if k==0:
+                u=0        
+            a +=1
+            if a>8:
+                a=1    
+            if a==1:
+                led.value(1) 
+                led1.value(0) 
+                led2.value(0) 
+                led3.value(0) 
+            if a==2:
+                led.value(1) 
+                led1.value(0) 
+                led2.value(0) 
+                led3.value(1) 
+            if a==3:
+                led.value(0) 
+                led1.value(0) 
+                led2.value(0) 
+                led3.value(1) 
+            if a==4:
+                led.value(0) 
+                led1.value(0) 
+                led2.value(1) 
+                led3.value(1)        
+            if a==5:
+                led.value(0) 
+                led1.value(0) 
+                led2.value(1) 
+                led3.value(0)  
+            if a==6:
+                led.value(0) 
+                led1.value(1) 
+                led2.value(1) 
+                led3.value(0)  
+            if a==7:
+                led.value(0) 
+                led1.value(1) 
+                led2.value(0) 
+                led3.value(0)  
+            if a==8:
+                led.value(1) 
+                led1.value(1) 
+                led2.value(0) 
+                led3.value(0)  
+        if directie=="sus":
+            time.sleep_us(200)
+            k -=1
+            if k==0:
+                u=0        
+            a +=1
+            if a>8:
+                a=1    
+            if a==1:
+                led4.value(1) 
+                led5.value(0) 
+                led6.value(0) 
+                led7.value(0) 
+            if a==2:
+                led4.value(1) 
+                led5.value(1) 
+                led6.value(0) 
+                led7.value(0) 
+            if a==3:
+                led4.value(0) 
+                led5.value(1) 
+                led6.value(0) 
+                led7.value(0) 
+            if a==4:
+                led4.value(0) 
+                led5.value(1) 
+                led6.value(1) 
+                led7.value(0)        
+            if a==5:
+                led4.value(0) 
+                led5.value(0) 
+                led6.value(1) 
+                led7.value(0)  
+            if a==6:
+                led4.value(0) 
+                led5.value(0) 
+                led6.value(1) 
+                led7.value(1)  
+            if a==7:
+                led4.value(0) 
+                led5.value(0) 
+                led6.value(0) 
+                led7.value(1)  
+            if a==8:
+                led4.value(1) 
+                led5.value(0) 
+                led6.value(0) 
+                led7.value(1) 
+                
+        if directie=="jos":
+            time.sleep_us(200)
+            k -=1
+            if k==0:
+                u=0        
+            a +=1
+            if a>8:
+                a=1    
+            if a==1:
+                led4.value(1) 
+                led5.value(0) 
+                led6.value(0) 
+                led7.value(0) 
+            if a==2:
+                led4.value(1) 
+                led5.value(0) 
+                led6.value(0) 
+                led7.value(1) 
+            if a==3:
+                led4.value(0) 
+                led5.value(0) 
+                led6.value(0) 
+                led7.value(1) 
+            if a==4:
+                led4.value(0) 
+                led5.value(0) 
+                led6.value(1) 
+                led7.value(1)        
+            if a==5:
+                led4.value(0) 
+                led5.value(0) 
+                led6.value(1) 
+                led7.value(0)  
+            if a==6:
+                led4.value(0) 
+                led5.value(1) 
+                led6.value(1) 
+                led7.value(0)  
+            if a==7:
+                led4.value(0) 
+                led5.value(1) 
+                led6.value(0) 
+                led7.value(0)  
+            if a==8:
+                led4.value(1) 
+                led5.value(1) 
+                led6.value(0) 
+                led7.value(0)    
     try:       
         request = conn.recv(200).decode()                                  
         if "?" in request:   
@@ -128,3 +307,4 @@ while True:
 # Clean up the connection.
 conn.close()
 print("closed. ") 
+      
