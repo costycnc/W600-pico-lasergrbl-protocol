@@ -23,27 +23,49 @@ m=0
 n=0
 t=0
 u=0
+v=[]
+x=0
+y=0
 
+
+def extract(a4):
+    vrt=""
+    for a5 in a4:    
+        if  a5 in('.','0','1','2','3','4','5','6','7','8','9',"-"):
+            vrt +=a5
+        else:
+            break
+    return vrt    
 
 def gcode_exec(strg):
-    global k
-    for i in range(0,len(b),2): 
-        if b[i]=="X":
-            #r=float(b[i+1])
-            k=5000
-    if k==0:
-        conn.send("ok\n")
+    global k,u,x,y
+    if "X" in strg:
+        nn=strg.split("X")
+        k=int(float(extract(nn[1])))
+        x=k
+        k=k*100
+    if "Y" in strg:
+        nn=strg.split("Y")
+        y=int(float(extract(nn[1])))        
+    else:
+        u=0    
+        
+
 while True: 
     #led.value(not led.value())
-    if len(b)>0:
-        if k==0:
-            gcode_exec(b[0])
-            b.remove(b[0])
-    while k>0:
-        k -=1  
-        if k==0:                        
+    if u==0:
+        u=1
+        if v:
+            print("gcode")
+            gcode_exec(v.pop(0))
             conn.send("ok\n")
-            break            
+        else:
+            u=0
+    if k>0:
+        time.sleep_us(200)
+        k -=1
+        if k==0:
+            u=0        
         a +=1
         if a>8:
             a=1    
@@ -90,37 +112,18 @@ while True:
     try:       
         request = conn.recv(200).decode()                                  
         if "?" in request:   
-            conn.send("<Idle|MPos:0.000,0.000,0.000|FS:0,0>\r")
-        else:      
-            print("\r")        
-            print(request)
-            d=9
-            c=""
-            n=0
-            for a1 in request:            
-                if a1 in ('.','0','1','2','3','4','5','6','7','8','9',"-"):
-                    m=0
-                else:
-                    m=1 
-                    if a1=="\n":
-                        b.append(c)
-                        if c=="$$":
-                            conn.send("ok\n")
-                        #gcode_exec(b)                       
-                        u=1
-                        c=""                        
-                        t=m                         
-                        print(b)                        
-                if t==m:
-                    if not a1=="\n":                    
-                        c +=a1
-                else:                                     
-                    b.append(c)
-                    c=a1
-                t=m                                            
-                 
+            conn.send("<Idle|MPos:"+str(x)+","+str(y)+",0.000|FS:0,0>\r")
+        elif "$$" in request:
+            conn.send("ok\n")
+        else: 
+            b=request.split("\n")
+            for ax in b:            
+                #gcode_exec(ax)
+                v.append(ax)
+
+                
     except OSError as e:
-        time.sleep_us(200)                 
+        pass                 
       
 # Clean up the connection.
 conn.close()
