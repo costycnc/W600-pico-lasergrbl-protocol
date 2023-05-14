@@ -48,3 +48,5 @@ https://github.com/arkypita/LaserGRBL/discussions/952
 	}
 
 gcode sa ma inspir https://github.com/alx/reprap-arduino-firmware/blob/master/GCode_Interpreter/process_string.pde
+
+<img src="https://raw.githubusercontent.com/costycnc/W600-pico-lasergrbl-protocol-foto/main/foto/connect.jpg"> 
